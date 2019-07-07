@@ -12,16 +12,9 @@
     <link rel="stylesheet" href="layui/css/layui.css">
   </head>
   <body>
-  <a href="login.html">登录</a>
-  <script src="layui/layui.js"></script>
-  <script>
-      //一般直接写在一个js文件中
-      layui.use(['layer', 'form'], function(){
-          var layer = layui.layer
-              ,form = layui.form;
+  <script src="static/JS/jquery.min.js"></script>
+  <img src="Kaptcha.jpg" name="kaptcha" id="kaptcha">
+  <a href="login.html">aaaaa</a>
 
-          layer.msg('Hello World');
-      });
-  </script>
   </body>
 </html>

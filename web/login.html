@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>请登录！</title>
-    <link rel="stylesheet" href="CSS/login.css">
+    <link rel="stylesheet" href="static/CSS/login.css">
+    <script src="static/JS/jquery.min.js"></script>
 </head>
 <body>
 <div id="div0">
     <div id="div1">
-        <form class="layui-form" action="#">
+        <form class="layui-form" action="JDBC">
             <div id="top">
                 <div id="username">
                     <span class="span">用户名：</span>
@@ -19,7 +20,11 @@
                     <input type="password" name="password" placeholder="请输入密码" class="layui-input">
                 </div>
 
-                <div id="mid"></div>
+                <div id="kaptcha">
+                    <span class="span">验证码：</span>
+                    <input type = "text" name="code" id="kaptcha_input" placeholder="请输入验证码" class="layui-input">
+                    <img title="点击更换" src="Kaptcha.jpg" name="kaptcha" id="kaptcha_img">
+                </div>
             </div>
             <div id="bottom">
                 <a href="" id="a_pwd">忘记密码</a><span style="color: #cccccc">|</span><a href="" id="a_rgt">注册</a>
@@ -28,5 +33,12 @@
         </form>
     </div>
 </div>
+<script>
+    $(function () {
+        $("#kaptcha_img").click(function () {
+            $(this).hide().attr('src', this.src + '?' + new Date().getTime()).fadeIn();
+        });
+    });
+</script>
 </body>
 </html>
