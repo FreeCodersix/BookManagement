@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>请登录！</title>
+    <link rel="icon" type="image/x-icon" href="static/img/logo.jpg"/>
     <link rel="stylesheet" href="static/CSS/login.css">
     <script src="static/JS/jquery.min.js"></script>
+    <link rel="stylesheet" href="static/CSS/clear.css">
+    <script src="static/JS/jquery-1.12.4.js"></script>
 </head>
 <body>
 <div id="div0">
     <div id="div1">
-        <form class="layui-form" action="JDBC">
+        <form class="layui-form" action="">
             <div id="top">
                 <div id="username">
                     <span class="span">用户名：</span>
@@ -27,7 +30,7 @@
                 </div>
             </div>
             <div id="bottom">
-                <a href="" id="a_pwd">忘记密码</a><span style="color: #cccccc">|</span><a href="" id="a_rgt">注册</a>
+                <a href="#" id="a_pwd">忘记密码</a><span style="color: #cccccc">|</span><a href="register.html" id="a_rgt">注册</a>
                 <input type="submit" value="Login" id="login_btn">
             </div>
         </form>

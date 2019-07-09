@@ -32,6 +32,10 @@
             <param-name>kaptcha.textproducer.font.color</param-name>
             <param-value>red</param-value>
         </init-param>
+        <init-param>
+        <param-name>kaptcha.session.key</param-name>
+        <param-value>session_code</param-value>
+        </init-param>
         <!-- 图片宽度 -->
         <init-param>
             <param-name>kaptcha.image.width</param-name>
