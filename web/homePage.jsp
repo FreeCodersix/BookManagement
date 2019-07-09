@@ -1,3 +1,11 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: Administrator
+  Date: 2019/7/9
+  Time: 11:33
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,13 +14,13 @@
     <script src="layui/layui.js"></script>
     <link rel="stylesheet" href="layui/css/layui.css">
     <style>
-        #iframe{
-            width: 1621px;
-            height: 772px;
+        #iframe {
+            width: 88.5%;
+            height: 100%;
             position: fixed;
             right: 0;
             top: 60px;
-            border:none;
+            border: none;
         }
     </style>
 </head>
@@ -21,19 +29,21 @@
 <div class="layui-layout layui-layout-admin">
     <div class="layui-header header header-demo" summer>
         <div class="layui-main">
-            <a class="logo" href="/">
-                <img src="/static/img/logo.jpg" alt="layui" style="border-radius: 50%;width: 32px;height: 32px;float:left;margin-top:10px;">
+            <a class="logo" href="#">
+                <img src="static/img/logo.jpg" alt="layui"
+                     style="border-radius: 50%;width: 32px;height: 32px;float:left;margin-top:10px;">
             </a>
-            <h1 class="layui-nav-item" style="height: 50px;width: 500px;float:left;margin-left: 20px;color:#cccccc;font-family:微软雅黑;line-height: 50px;font-size: 20px;">
-                咸鱼图书系统，当前用户：
+            <h1 class="layui-nav-item"
+                style="height: 50px;width: 500px;float:left;margin-left: 20px;color:#cccccc;font-family:微软雅黑;line-height: 50px;font-size: 20px;">
+                咸鱼图书系统，当前用户： <%=session.getAttribute("username")%>
             </h1>
             <div class="layui-form component" lay-filter="LAY-site-header-component"></div>
             <ul class="layui-nav" style="float: right;">
                 <li class="layui-nav-item ">
-                    <a href="/doc/">个人中心</a>
+                    <a href="center.jsp">个人中心</a>
                 </li>
                 <li class="layui-nav-item layui-this">
-                    <a href="/demo/">主页<!--  --></a>
+                    <a href="javascript:;">主页<!--  --></a>
                 </li>
 
 
@@ -95,30 +105,6 @@
                         <dd>
                             <a href="/demo/nav.html">意见和建议</a>
                         </dd>
-                        <!--<dd class="">-->
-                            <!--<a href="/demo/tab.html">选项卡</a>-->
-                        <!--</dd>-->
-                        <!--<dd class="">-->
-                            <!--<a href="/demo/progress.html">进度条</a>-->
-                        <!--</dd>-->
-                        <!--<dd class="">-->
-                            <!--<a href="/demo/panel.html">面板</a>-->
-                        <!--</dd>-->
-                        <!--<dd class="">-->
-                            <!--<a href="/demo/badge.html">徽章</a>-->
-                        <!--</dd>-->
-                        <!--<dd class="">-->
-                            <!--<a href="/demo/timeline.html">时间线</a>-->
-                        <!--</dd>-->
-                        <!--<dd class="">-->
-                            <!--<a href="/demo/table-element.html">静态表格</a>-->
-                        <!--</dd>-->
-                        <!--<dd class="">-->
-                            <!--<a href="/demo/anim.html">动画</a>-->
-                        <!--</dd>-->
-                        <!--<dd class="">-->
-                            <!--<a href="/demo/auxiliar.html">辅助元素</a>-->
-                        <!--</dd>-->
                     </dl>
                 </li>
 
@@ -127,23 +113,21 @@
 
         </div>
     </div>
-    <iframe src="static/img/index.jpg" id="iframe"></iframe>
+    <iframe src="company?method=list" id="iframe"></iframe>
 </div>
 <div id="LAY_democodejs">
     <script>
-
-        layui.use('element', function(){
+        layui.use('element', function () {
             var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
 
             //监听导航点击
-            element.on('nav(demo)', function(elem){
+            element.on('nav(demo)', function (elem) {
                 //console.log(elem)
                 layer.msg(elem.text());
             });
         });
     </script>
 </div>
-
 </body>
 
 </html>

@@ -13,9 +13,9 @@
     <script src="static/JS/jquery-1.12.4.js"></script>
 </head>
 <body>
-<div id="div0">
+<%--<div id="div0">
     <div id="div1">
-        <%--<form class="layui-form" action="check.jsp" name="form">--%>
+        &lt;%&ndash;<form class="layui-form" action="check.jsp" name="form">&ndash;%&gt;
             <div id="top">
                 <div id="username">
                     <span class="span">用户名：</span>
@@ -37,7 +37,7 @@
                                                                                        id="a_rgt">注册</a>
                 <input type="button" value="Login" id="login_btn" onclick="kaptch_check()">
             </div>
-        <%--</form>--%>
+        &lt;%&ndash;</form>&ndash;%&gt;
     </div>
 </div>
 <script>
@@ -90,6 +90,7 @@
                 }
             }
         )}
-</script>
+</script>--%>
+<a href="login.html">点我</a>
 </body>
 </html>

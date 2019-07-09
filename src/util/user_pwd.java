@@ -1,5 +1,7 @@
 package util;
 
+import sun.misc.Request;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,6 +22,7 @@ public class user_pwd extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // TODO Auto-generated method stub
         try {
@@ -34,16 +37,32 @@ public class user_pwd extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         ResultSet rs = null;
-        try {
-            if (checkUser.check(request.getParameter("username"),request.getParameter("password"))) {
-                //客户端是getJSON，则要以json格式返回数据
-                out.write("{\"msg\":\"true\"}");
-            } else {
-                out.write("{\"msg\":\"false\"}");
+        String repwd = request.getParameter("repassword");
+        if (repwd == null || repwd.length() == 0) {
+            try {
+                if (checkUser.check(request.getParameter("username"), request.getParameter("password"))) {
+                    //客户端是getJSON，则要以json格式返回数据
+                    out.write("{\"msg\":\"true\"}");
+                    request.getSession().setAttribute("username",request.getParameter("username"));
+                } else {
+                    out.write("{\"msg\":\"false\"}");
+                }
+                out.close();
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-            out.close();
-        } catch (Exception e) {
-            e.printStackTrace();
+        }else{
+            try {
+                if (checkUser.checkpwd(request.getParameter("username"), request.getParameter("password"), request.getParameter("repassword"))) {
+                    //客户端是getJSON，则要以json格式返回数据
+                    out.write("{\"msg\":\"true\"}");
+                } else {
+                    out.write("{\"msg\":\"false\"}");
+                }
+                out.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 }
