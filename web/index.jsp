@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="static/CSS/login.css">
     <script src="static/JS/jquery.min.js"></script>
     <script src="static/JS/jquery-1.12.4.js"></script>
+    <base target="_self">
 </head>
 <body>
 <%--<div id="div0">

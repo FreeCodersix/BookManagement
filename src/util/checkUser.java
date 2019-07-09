@@ -79,17 +79,19 @@ public class checkUser {
         return flag;
     }
 
-    public static void stateSave(String username, String li_id, int st) throws Exception {
+    public static ResultSet query(String b_name) throws Exception {
 
         //获取连接
         Connection conn = JDBC_Util.getConnection();
 
-        String sql = "update " + username + " set state = " + st + " where li_id ='" + li_id + "'";
+        String sql = "SELECT  * FROM 图书表 where b_name ='" + b_name + "'";
         PreparedStatement ps = conn.prepareStatement(sql);
 //        ps.setString(1, li_id);
-        ps.executeUpdate();
+
 //        util.JDBC_Util.close(conn, ps, null);
+        ResultSet rs = ps.executeQuery();
         JDBC_Util.close(null, null, ps, conn);
+        return rs;
     }
 
     public static void createSTable(String username) throws Exception {

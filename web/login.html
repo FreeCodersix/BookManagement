@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="static/CSS/login.css">
     <script src="static/JS/jquery.min.js"></script>
     <script src="static/JS/jquery-1.12.4.js"></script>
+    <base target="_self">
 </head>
 <body>
 <div id="div0">
@@ -59,7 +60,7 @@
 
             function (result) {
                 if (result.msg === "true") {
-                    location.href = "homePage.jsp?username=";
+                    location.href = "homePage.jsp";
                 } else {
                     alert("用户名或密码错误!");
                 }

@@ -16,7 +16,7 @@
     <style>
         #iframe {
             width: 88.5%;
-            height: 100%;
+            height: 93%;
             position: fixed;
             right: 0;
             top: 60px;
@@ -97,13 +97,13 @@
                     <a class="javascript:;" href="javascript:;">问题咨询</a>
                     <dl class="layui-nav-child">
                         <dd class="">
-                            <a href="/demo/button.html">问题</a>
+                            <a href="advice.html">问题</a>
                         </dd>
                         <dd class="">
-                            <a href="/demo/form.html">投诉</a>
+                            <a href="advice.html">投诉</a>
                         </dd>
                         <dd>
-                            <a href="/demo/nav.html">意见和建议</a>
+                            <a href="advice.html">意见和建议</a>
                         </dd>
                     </dl>
                 </li>
@@ -113,7 +113,7 @@
 
         </div>
     </div>
-    <iframe src="company?method=list" id="iframe"></iframe>
+    <iframe src="book?method=list" id="iframe"></iframe>
 </div>
 <div id="LAY_democodejs">
     <script>

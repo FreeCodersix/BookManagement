@@ -1,11 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    <jsp:forward page="company"></jsp:forward>
-<!DOCTYPE html>
+<%--
+  Created by IntelliJ IDEA.
+  User: WUYOU
+  Date: 2019/7/9
+  Time: 9:38
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<jsp:forward page="book"/>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+    <title>default</title>
 </head>
 <body>
 

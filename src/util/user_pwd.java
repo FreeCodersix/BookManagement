@@ -1,6 +1,7 @@
 package util;
 
 import sun.misc.Request;
+import train.entity.Company;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.ResultSet;
+import java.util.List;
 
 @WebServlet("/util.user_pwd")
 public class user_pwd extends HttpServlet {
@@ -38,28 +40,40 @@ public class user_pwd extends HttpServlet {
 
         ResultSet rs = null;
         String repwd = request.getParameter("repassword");
-        if (repwd == null || repwd.length() == 0) {
-            try {
-                if (checkUser.check(request.getParameter("username"), request.getParameter("password"))) {
-                    //客户端是getJSON，则要以json格式返回数据
-                    out.write("{\"msg\":\"true\"}");
-                    request.getSession().setAttribute("username",request.getParameter("username"));
-                } else {
-                    out.write("{\"msg\":\"false\"}");
+        String password = request.getParameter("password");
+        if (password != null && password.length() != 0) {
+            if (repwd == null || repwd.length() == 0) {
+                try {
+                    if (checkUser.check(request.getParameter("username"), request.getParameter("password"))) {
+                        //客户端是getJSON，则要以json格式返回数据
+                        out.write("{\"msg\":\"true\"}");
+                        request.getSession().setAttribute("username", request.getParameter("username"));
+                    } else {
+                        out.write("{\"msg\":\"false\"}");
+                    }
+                    out.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
-                out.close();
-            } catch (Exception e) {
-                e.printStackTrace();
+            } else {
+                try {
+                    if (checkUser.checkpwd(request.getParameter("username"), request.getParameter("password"), request.getParameter("repassword"))) {
+                        //客户端是getJSON，则要以json格式返回数据
+                        out.write("{\"msg\":\"true\"}");
+                    } else {
+                        out.write("{\"msg\":\"false\"}");
+                    }
+                    out.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
-        }else{
+        } else {
             try {
-                if (checkUser.checkpwd(request.getParameter("username"), request.getParameter("password"), request.getParameter("repassword"))) {
-                    //客户端是getJSON，则要以json格式返回数据
-                    out.write("{\"msg\":\"true\"}");
-                } else {
-                    out.write("{\"msg\":\"false\"}");
+                ResultSet resultSet = checkUser.query(request.getParameter("name"));
+                while (rs.next()){
+//                    out.write("{\"b_id\":\""+ rs.getObject()+"\"}");
                 }
-                out.close();
             } catch (Exception e) {
                 e.printStackTrace();
             }
