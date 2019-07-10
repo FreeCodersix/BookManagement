@@ -115,6 +115,8 @@
             $("#kaptcha_img").click(function () {
                 $(this).hide().attr('src', this.src + '?' + new Date().getTime()).fadeIn();
             });
+
+
         });
         layui.use(['form', 'layedit', 'laydate'], function(){
             var form = layui.form

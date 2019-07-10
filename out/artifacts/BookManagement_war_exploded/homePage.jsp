@@ -13,6 +13,9 @@
     <title>咸鱼图书</title>
     <script src="layui/layui.js"></script>
     <link rel="stylesheet" href="layui/css/layui.css">
+
+    <script src="static/JS/jquery-1.12.4.js"></script>
+    <base type="_self">
     <style>
         #iframe {
             width: 88.5%;
@@ -48,7 +51,7 @@
 
 
                 <li class="layui-nav-item">
-                    <a href="login.html" target="_blank">注销</a>
+                    <a href="index.jsp" target="_self">注销</a>
                 </li>
 
             </ul>
@@ -97,23 +100,25 @@
                     <a class="javascript:;" href="javascript:;">问题咨询</a>
                     <dl class="layui-nav-child">
                         <dd class="">
-                            <a href="advice.html">问题</a>
+                            <a href="homePage.jsp?src=advice.html" class="prr">问题</a>
                         </dd>
                         <dd class="">
-                            <a href="advice.html">投诉</a>
+                            <a href="homePage.jsp?src=advice.html" class="prr">投诉</a>
                         </dd>
                         <dd>
-                            <a href="advice.html">意见和建议</a>
+                            <a href="homePage.jsp?src=advice.html" class="prr">意见和建议</a>
                         </dd>
                     </dl>
                 </li>
 
-                <li class="layui-nav-item" style="height: 30px; text-align: center"></li>
+                <li class="layui-nav-item layui-nav-itemed">
+                    <p id="p" style="margin-left: 20px;font-weight: bolder;cursor:pointer;">返回</p>
+                </li>
             </ul>
 
         </div>
     </div>
-    <iframe src="book?method=list" id="iframe"></iframe>
+    <iframe id="iframe" src=<%=request.getParameter("src")%> ></iframe>
 </div>
 <div id="LAY_democodejs">
     <script>
@@ -126,6 +131,17 @@
                 layer.msg(elem.text());
             });
         });
+
+        $(".prr").click(function () {
+            $("#iframe").attr("src","advice.html");
+        });
+        $("#p").click(function () {
+            history.go(-1);
+            goBack();
+        });
+        function goBack() {
+            history.go(-1);
+        }
     </script>
 </div>
 </body>

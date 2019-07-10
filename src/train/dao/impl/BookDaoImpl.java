@@ -92,12 +92,13 @@ public class BookDaoImpl implements BookDao {
     public List<Book> getList(Book book) throws Exception {
         con = DbUtil.getConnection();
         st = con.createStatement();
+
         String sql = "";
         String b_name = book.getB_name();
         String b_class = book.getB_class();
         String b_author = book.getB_author();
         String b_publisher = book.getB_publisher();
-        System.out.println(b_name +" "+b_class+" "+b_author+" "+b_publisher);
+
         if(book.getB_id()==null || book.getB_id().length()==0){
             if(b_name != null && book.getB_name().length()!=0){
                 sql = sql+"SELECT * FROM 图书表 WHERE b_name like '%"+b_name+"%'";
@@ -112,7 +113,7 @@ public class BookDaoImpl implements BookDao {
         else {
             sql = "select * from 图书表";
         }
-        System.out.println(sql);
+
         ResultSet rs = st.executeQuery(sql);
         List<Book> list = new LinkedList<Book>();
         if (rs != null) {
