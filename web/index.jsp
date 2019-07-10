@@ -4,6 +4,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Insert title here</title>
     <title>请登录！</title>
     <link rel="icon" type="image/x-icon" href="static/img/logo.jpg"/>
@@ -17,7 +18,7 @@
 <body>
 <div id="div0">
     <div id="div1">
-        <!--<form class="layui-form" action="check.jsp" name="form">-->
+        <form class="layui-form" id="loginForm">
         <div id="top">
             <div id="username">
                 <span class="span">用户名：</span>
@@ -39,7 +40,7 @@
                                                                                    id="a_rgt">注册</a>
             <input type="button" value="Login" id="login_btn" onclick="login()">
         </div>
-        <!--</form>-->
+        </form>
     </div>
 </div>
 <script>
@@ -49,7 +50,6 @@
         });
         var kaptcha_input = document.getElementById("kaptcha_input");
         kaptcha_input.value = "";
-        $("#kaptcha_input").style.placeholder = "请输入验证码"
     });
 
     function login() {
@@ -91,12 +91,34 @@
                     alert("验证码错误!");
                     var kaptcha_input = document.getElementById("kaptcha_input");
                     kaptcha_input.value = "";
-                    $("#kaptcha_input").style.placeholder = "请输入验证码"
+
                 }
             }
         )}
+<%session.setAttribute("username",null);%>
+
+    //添加cookie
+    function setCookie(name,value,time){
+        var date= new Date();
+        date.setDate(date.getDate()+time);
+        document.cookie = name+"="+value+";expires="+date;
+    }
+
+    //获得cookie
+    function getCookie(name){
+        var arr = document.cookie.split(";");
+        for(var i=0; i<arr.length; i++){
+            var arr2 = arr[i].split("=");
+            if(arr2[0] == name){
+                return arr2[1];
+            }
+        }
+        return null;
+    }
 
 </script>
+
+
 </body>
 </body>
 </html>

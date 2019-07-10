@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="layui/css/layui.css"  media="all">
+    <link rel="icon" type="image/x-icon" href="static/img/logo.jpg"/>
     <link rel="stylesheet" href="static/CSS/register.css">
     <script src="layui/layui.js"></script>
     <script src="static/JS/jquery-1.12.4.js"></script>
@@ -30,12 +31,12 @@
                     <a href="#">个人中心</a>
                 </li>
                 <li class="layui-nav-item">
-                    <a href="homePage.jsp">主页<!--  --></a>
+                    <a href="homePage.jsp?src=book?method=list">主页<!--  --></a>
                 </li>
 
 
                 <li class="layui-nav-item">
-                    <a href="login.html" target="_blank">注销</a>
+                    <a href="index.jsp" target="_self">注销</a>
                 </li>
 
             </ul>

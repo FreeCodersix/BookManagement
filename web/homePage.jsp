@@ -13,7 +13,7 @@
     <title>咸鱼图书</title>
     <script src="layui/layui.js"></script>
     <link rel="stylesheet" href="layui/css/layui.css">
-
+    <link rel="icon" type="image/x-icon" href="static/img/logo.jpg"/>
     <script src="static/JS/jquery-1.12.4.js"></script>
     <base type="_self">
     <style>
@@ -36,10 +36,21 @@
                 <img src="static/img/logo.jpg" alt="layui"
                      style="border-radius: 50%;width: 32px;height: 32px;float:left;margin-top:10px;">
             </a>
+            <%
+                if (session.getAttribute("username") == null || session.getAttribute("username").toString().length() == 0) {
+            %>
+            <h1 class="layui-nav-item"
+                style="height: 50px;width: 500px;float:left;margin-left: 20px;color:#cccccc;font-family:微软雅黑;line-height: 50px;font-size: 20px;">
+                咸鱼图书系统，请<a href="index.jsp" style="font-family: '微软雅黑';font-weight: bolder;color: orangered;"><u>登录</u></a>!
+            </h1>
+            <%
+            } else {%>
             <h1 class="layui-nav-item"
                 style="height: 50px;width: 500px;float:left;margin-left: 20px;color:#cccccc;font-family:微软雅黑;line-height: 50px;font-size: 20px;">
                 咸鱼图书系统，当前用户： <%=session.getAttribute("username")%>
-            </h1>
+            </h1><%
+            }
+        %>
             <div class="layui-form component" lay-filter="LAY-site-header-component"></div>
             <ul class="layui-nav" style="float: right;">
                 <li class="layui-nav-item ">
@@ -118,7 +129,7 @@
 
         </div>
     </div>
-    <iframe id="iframe" src=<%=request.getParameter("src")%> ></iframe>
+    <iframe id="iframe" src=<%=request.getParameter("src")%>></iframe>
 </div>
 <div id="LAY_democodejs">
     <script>
@@ -133,15 +144,17 @@
         });
 
         $(".prr").click(function () {
-            $("#iframe").attr("src","advice.html");
+            $("#iframe").attr("src", "advice.html");
         });
         $("#p").click(function () {
             history.go(-1);
             goBack();
         });
+
         function goBack() {
             history.go(-1);
         }
+
     </script>
 </div>
 </body>
