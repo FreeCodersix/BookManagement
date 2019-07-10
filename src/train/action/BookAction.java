@@ -32,7 +32,7 @@ public class BookAction extends HttpServlet{
         String method = request.getParameter("method");
 
         method = method != null && method.length() > 0 ? method : "list";
-        System.out.println(method);
+
         switch (method) {
             case "list":
                 try {
@@ -77,13 +77,15 @@ public class BookAction extends HttpServlet{
 
         String b_name = request.getParameter("b_name");
         String b_class = request.getParameter("b_class");
-        //String start_year = request.getParameter("c_year");
-        //String end_year = request.getParameter("c_year");
         String b_author = request.getParameter("b_author");
         String b_publisher = request.getParameter("b_publisher");
+        String b_id = request.getParameter("b_id");
 
         Book book = new Book();
-
+        if(b_id==null || b_id.length()==0){
+            b_id = "189001";
+            book.setB_id(b_id);
+        }
         book.setB_name(b_name);
         book.setB_class(b_class);
         book.setB_author(b_author);
@@ -98,7 +100,6 @@ public class BookAction extends HttpServlet{
 
     private void input(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String b_id = request.getParameter("b_id");
-        System.out.println(b_id);
         if (b_id != null && b_id.length() > 0) {
             try {
                 Book book = bookService.getOne(b_id);

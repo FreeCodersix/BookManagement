@@ -1,8 +1,5 @@
 package util;
 
-import sun.misc.Request;
-import train.entity.Company;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,7 +8,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.ResultSet;
-import java.util.List;
 
 @WebServlet("/util.user_pwd")
 public class user_pwd extends HttpServlet {

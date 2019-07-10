@@ -54,7 +54,7 @@
             <td class="query_input"><input type="text" name="b_author" size="20" class="input"></td>
             <td class="query_head">出版社</td>
             <td class="query_input"><input type="text" name="b_publisher" size="20" class="input"></td>
-            <td><input type="submit" value="查询"></td>
+            <td><input type="submit" value="查询" name="b_id"></td>
         </tr>
     </table>
 </form>
