@@ -7,12 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2509afb9-2541-4a4e-bd9b-02f5fa3522d1" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/web/advice.html" afterPath="$PROJECT_DIR$/web/advice.html" />
-      <change beforePath="$PROJECT_DIR$/web/center.jsp" afterPath="$PROJECT_DIR$/web/center.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/apply.html" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/web/homePage.jsp" afterPath="$PROJECT_DIR$/web/homePage.jsp" />
-      <change beforePath="$PROJECT_DIR$/web/index.jsp" afterPath="$PROJECT_DIR$/web/index.jsp" />
-      <change beforePath="$PROJECT_DIR$/web/register.html" afterPath="$PROJECT_DIR$/web/register.html" />
-      <change beforePath="$PROJECT_DIR$/web/static/CSS/login.css" afterPath="$PROJECT_DIR$/web/static/CSS/login.css" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,17 +25,27 @@
         <entry file="file://$PROJECT_DIR$/web/book/list.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
-              <caret line="54" column="32" lean-forward="false" selection-start-line="54" selection-start-column="32" selection-end-line="54" selection-end-column="32" />
+              <caret line="54" column="34" lean-forward="true" selection-start-line="54" selection-start-column="34" selection-end-line="54" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BookDaoImpl.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="apply.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/apply.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-90">
+              <caret line="6" column="24" lean-forward="false" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BookDaoImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/train/dao/impl/BookDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="125" column="17" lean-forward="false" selection-start-line="125" selection-start-column="17" selection-end-line="125" selection-end-column="17" />
+            <state relative-caret-position="107">
+              <caret line="120" column="43" lean-forward="true" selection-start-line="120" selection-start-column="43" selection-end-line="120" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#insert#0;class#BookDaoImpl#0" expanded="false" />
@@ -46,10 +53,6 @@
                 <element signature="method#delete#0;class#BookDaoImpl#0" expanded="false" />
                 <element signature="method#getOne#0;class#BookDaoImpl#0" expanded="false" />
                 <element signature="method#getBookByResultSet#0;class#BookDaoImpl#0" expanded="false" />
-                <marker date="1562731008136" expanded="true" signature="603:711" ph="INSERT INTO 图书表" />
-                <marker date="1562731008136" expanded="true" signature="1443:1786" ph="UPDATE 图书表... " />
-                <marker date="1562731008136" expanded="true" signature="2155:2182" ph="delete from 图书表... " />
-                <marker date="1562731008136" expanded="true" signature="2474:2504" ph="select * fro... 图书表" />
                 <marker date="1562731008136" expanded="true" signature="3721:3771" ph="SELECT * FRO... 图书表" />
                 <marker date="1562731008136" expanded="true" signature="3873:3925" ph="SELECT * FRO... 图书表" />
                 <marker date="1562731008136" expanded="true" signature="4029:4083" ph="SELECT * FRO... 图书表" />
@@ -70,74 +73,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BookAction.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/train/action/BookAction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="67">
-              <caret line="80" column="39" lean-forward="true" selection-start-line="80" selection-start-column="39" selection-end-line="80" selection-end-column="39" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#BookAction#0;class#BookAction#0" expanded="false" />
-                <element signature="method#doGet#0;class#BookAction#0" expanded="false" />
-                <element signature="method#doPost#0;class#BookAction#0" expanded="false" />
-                <element signature="method#input#0;class#BookAction#0" expanded="false" />
-                <element signature="method#save#0;class#BookAction#0" expanded="false" />
-                <element signature="method#delete#0;class#BookAction#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/index.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="97" column="42" lean-forward="true" selection-start-line="97" selection-start-column="42" selection-end-line="97" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/static/CSS/login.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="center.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/center.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="register.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/register.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="9" column="69" lean-forward="false" selection-start-line="9" selection-start-column="69" selection-end-line="9" selection-end-column="69" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="homePage.jsp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="homePage.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/homePage.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="11" column="26" lean-forward="true" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+            <state relative-caret-position="-1050">
+              <caret line="104" column="59" lean-forward="true" selection-start-line="104" selection-start-column="59" selection-end-line="104" selection-end-column="59" />
               <folding>
                 <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#a#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#h1#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#p#0;n#li#3;n#ul#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
@@ -227,10 +171,10 @@
         <option value="$PROJECT_DIR$/web/test.html" />
         <option value="$PROJECT_DIR$/web/test.jsp" />
         <option value="$PROJECT_DIR$/web/index.jsp" />
-        <option value="$PROJECT_DIR$/web/homePage.jsp" />
         <option value="$PROJECT_DIR$/web/register.html" />
         <option value="$PROJECT_DIR$/web/advice.html" />
         <option value="$PROJECT_DIR$/web/center.jsp" />
+        <option value="$PROJECT_DIR$/web/homePage.jsp" />
       </list>
     </option>
   </component>
@@ -248,7 +192,7 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="772" />
@@ -391,19 +335,19 @@
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\BookManagement\web\book" />
-      <recent name="D:\BookManagement\web" />
-      <recent name="D:\BookManagement\web\company" />
-      <recent name="D:\BookManagement\src" />
-      <recent name="D:\BookManagement\web\WEB-INF\lib" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\BookManagement\web" />
       <recent name="D:\BookManagement\web\company" />
       <recent name="D:\BookManagement\web\static\CSS" />
       <recent name="D:\BookManagement\web\static\img" />
       <recent name="D:\BookManagement\web\static" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\BookManagement\web\book" />
+      <recent name="D:\BookManagement\web" />
+      <recent name="D:\BookManagement\web\company" />
+      <recent name="D:\BookManagement\src" />
+      <recent name="D:\BookManagement\web\WEB-INF\lib" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -607,15 +551,15 @@
       <workItem from="1562631271760" duration="36347000" />
       <workItem from="1562675646238" duration="156000" />
       <workItem from="1562717669190" duration="4980000" />
-      <workItem from="1562729067184" duration="15213000" />
+      <workItem from="1562729067184" duration="15698000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107682000" />
+    <option name="totallyTimeSpent" value="108167000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -705,7 +649,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/check.jsp" />
     <entry file="file://$PROJECT_DIR$/web/static/img/index.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -931,20 +874,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/homePage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="11" column="26" lean-forward="true" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
-          <folding>
-            <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h1#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#p#0;n#li#3;n#ul#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/register.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -969,14 +898,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/book/list.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="54" column="32" lean-forward="false" selection-start-line="54" selection-start-column="32" selection-end-line="54" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -993,10 +914,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/train/dao/impl/BookDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="120" column="43" lean-forward="true" selection-start-line="120" selection-start-column="43" selection-end-line="120" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#insert#0;class#BookDaoImpl#0" expanded="false" />
+            <element signature="method#update#0;class#BookDaoImpl#0" expanded="false" />
+            <element signature="method#delete#0;class#BookDaoImpl#0" expanded="false" />
+            <element signature="method#getOne#0;class#BookDaoImpl#0" expanded="false" />
+            <element signature="method#getBookByResultSet#0;class#BookDaoImpl#0" expanded="false" />
+            <marker date="1562731008136" expanded="true" signature="3721:3771" ph="SELECT * FRO... 图书表" />
+            <marker date="1562731008136" expanded="true" signature="3873:3925" ph="SELECT * FRO... 图书表" />
+            <marker date="1562731008136" expanded="true" signature="4029:4083" ph="SELECT * FRO... 图书表" />
+            <marker date="1562731008136" expanded="true" signature="4193:4253" ph="SELECT * FRO... 图书表" />
+            <marker date="1562731008136" expanded="true" signature="4314:4331" ph="select * fro... 图书表" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/train/action/BookAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67">
-          <caret line="80" column="39" lean-forward="true" selection-start-line="80" selection-start-column="39" selection-end-line="80" selection-end-column="39" />
+        <state relative-caret-position="-83">
+          <caret line="75" column="19" lean-forward="false" selection-start-line="75" selection-start-column="19" selection-end-line="75" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#BookAction#0;class#BookAction#0" expanded="false" />
@@ -1009,26 +950,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/train/dao/impl/BookDaoImpl.java">
+    <entry file="file://$PROJECT_DIR$/web/book/list.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="125" column="17" lean-forward="false" selection-start-line="125" selection-start-column="17" selection-end-line="125" selection-end-column="17" />
+        <state relative-caret-position="120">
+          <caret line="54" column="34" lean-forward="true" selection-start-line="54" selection-start-column="34" selection-end-line="54" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/apply.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-90">
+          <caret line="6" column="24" lean-forward="false" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/homePage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1050">
+          <caret line="104" column="59" lean-forward="true" selection-start-line="104" selection-start-column="59" selection-end-line="104" selection-end-column="59" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#insert#0;class#BookDaoImpl#0" expanded="false" />
-            <element signature="method#update#0;class#BookDaoImpl#0" expanded="false" />
-            <element signature="method#delete#0;class#BookDaoImpl#0" expanded="false" />
-            <element signature="method#getOne#0;class#BookDaoImpl#0" expanded="false" />
-            <element signature="method#getBookByResultSet#0;class#BookDaoImpl#0" expanded="false" />
-            <marker date="1562731008136" expanded="true" signature="603:711" ph="INSERT INTO 图书表" />
-            <marker date="1562731008136" expanded="true" signature="1443:1786" ph="UPDATE 图书表... " />
-            <marker date="1562731008136" expanded="true" signature="2155:2182" ph="delete from 图书表... " />
-            <marker date="1562731008136" expanded="true" signature="2474:2504" ph="select * fro... 图书表" />
-            <marker date="1562731008136" expanded="true" signature="3721:3771" ph="SELECT * FRO... 图书表" />
-            <marker date="1562731008136" expanded="true" signature="3873:3925" ph="SELECT * FRO... 图书表" />
-            <marker date="1562731008136" expanded="true" signature="4029:4083" ph="SELECT * FRO... 图书表" />
-            <marker date="1562731008136" expanded="true" signature="4193:4253" ph="SELECT * FRO... 图书表" />
-            <marker date="1562731008136" expanded="true" signature="4314:4331" ph="select * fro... 图书表" />
+            <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h1#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#li#3;n#ul#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

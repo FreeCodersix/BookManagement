@@ -96,13 +96,13 @@
                     <a class="javascript:;" href="javascript:;">书籍借阅</a>
                     <dl class="layui-nav-child">
                         <dd class="">
-                            <a href="/demo/grid.html">申请借阅</a>
+                            <a href="homePage.jsp?src=apply.html" class="apply">申请借阅</a>
                         </dd>
                         <dd class="">
-                            <a href="/demo/admin.html">申请归还</a>
+                            <a href="homePage.jsp?src=apply.html" class="apply">申请归还</a>
                         </dd>
                         <dd class="">
-                            <a href="/demo/admin.html">申请预定</a>
+                            <a href="homePage.jsp?src=apply.html" class="apply">申请预定</a>
                         </dd>
                     </dl>
                 </li>
@@ -111,13 +111,13 @@
                     <a class="javascript:;" href="javascript:;">问题咨询</a>
                     <dl class="layui-nav-child">
                         <dd class="">
-                            <a href="homePage.jsp?src=advice.html" class="prr">问题</a>
+                            <a href="homePage.jsp?src=advice.html" class="advice">问题</a>
                         </dd>
                         <dd class="">
-                            <a href="homePage.jsp?src=advice.html" class="prr">投诉</a>
+                            <a href="homePage.jsp?src=advice.html" class="advice">投诉</a>
                         </dd>
                         <dd>
-                            <a href="homePage.jsp?src=advice.html" class="prr">意见和建议</a>
+                            <a href="homePage.jsp?src=advice.html" class="advice">意见和建议</a>
                         </dd>
                     </dl>
                 </li>
@@ -143,8 +143,11 @@
             });
         });
 
-        $(".prr").click(function () {
+        $(".advice").click(function () {
             $("#iframe").attr("src", "advice.html");
+        });
+        $(".apply").click(function () {
+            $("#iframe").attr("src", "apply.html");
         });
         $("#p").click(function () {
             history.go(-1);
