@@ -18,7 +18,7 @@
 <body>
 <div id="div0">
     <div id="div1">
-        <form class="layui-form" id="loginForm">
+        <%--<form class="layui-form" id="loginForm">--%>
         <div id="top">
             <div id="username">
                 <span class="span">用户名：</span>
@@ -40,7 +40,7 @@
                                                                                    id="a_rgt">注册</a>
             <input type="button" value="Login" id="login_btn" onclick="login()">
         </div>
-        </form>
+        <%--</form>--%>
     </div>
 </div>
 <script>

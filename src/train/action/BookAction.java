@@ -127,7 +127,7 @@ public class BookAction extends HttpServlet{
 
         Book book = new Book();
 //        company.setId(Integer.parseInt(id));
-        book.setB_id(b_id);
+//        book.setB_id(b_id);
         book.setB_name(b_name);
         book.setB_class(b_class);
         book.setB_no(b_no);

@@ -11,55 +11,47 @@
     <title>公司管理列表</title>
     <link rel="stylesheet" href="../static/CSS/register.css">
     <link rel="stylesheet" href="../layui/css/layui.css" media="all">
-
     <script src="../layui/layui.js"></script>
     <script src="../static/JS/jquery-1.12.4.js"></script>
-
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-        }
-        .query_head{
-            display: inline-block;
-            width: 50px;
-            height: 30px;
-            line-height: 30px;
-            text-align: center;
-            font-size: 16px;
-            color: #cccccc;
-            font-weight: bolder;
-            font-family: "微软雅黑";
-            border: none;
-        }
-        .query_input{
-            border: none;
-        }
-        .input{
-            height: 20px;
-            border-radius: 5px;
-        }
-    </style>
 </head>
 <body>
-<form action="book" method="post">
+<form style="margin-top: 30px;" class="layui-form" action="book" method="post">
     <input type="hidden" name="method" value="list"/><%--param.id也可以--%>
-    <table border="1" width="800" style="border: none">
-        <tr style="border: none">
-            <td class="query_head">书名</td>
-            <td class="query_input"><input type="text" name="b_name" size="20" class="input"></td>
-            <td class="query_head">类别</td>
-            <td class="query_input"><input type="text" name="b_class" size="20" class="input"></td>
-            <td class="query_head">作者</td>
-            <td class="query_input"><input type="text" name="b_author" size="20" class="input"></td>
-            <td class="query_head">出版社</td>
-            <td class="query_input"><input type="text" name="b_publisher" size="20" class="input"></td>
-            <td><input type="submit" value="查询" name="b_id"></td>
-        </tr>
-    </table>
-</form>
-<input type="button" value="添加" onclick="location.href='book?method=input'">
 
+    <div class="layui-form-item">
+
+        <label class="layui-form-label">书名</label>
+        <div class="layui-input-inline" style="width: 500px;!important;">
+            <input type="text" name="b_name" placeholder="书名查询" autocomplete="off" class="layui-input isEmpty">
+        </div>
+
+        <label class="layui-form-label">类别</label>
+        <div class="layui-input-inline" style="width: 500px;!important;">
+            <input type="text" name="b_class" placeholder="类别查询" autocomplete="off" class="layui-input isEmpty">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+
+        <label class="layui-form-label">作者</label>
+        <div class="layui-input-inline" style="width: 500px;!important;">
+            <input type="text" name="b_author" placeholder="作者查询" autocomplete="off" class="layui-input isEmpty">
+        </div>
+
+        <label class="layui-form-label">出版社</label>
+        <div class="layui-input-inline" style="width: 500px;!important;">
+            <input type="text" name="b_publisher" placeholder="出版社查询" autocomplete="off" class="layui-input isEmpty">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <input class="layui-btn" type="submit" value="查询" name="b_id" id="query">
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+    </div>
+</form>
+<button class="layui-btn" lay-filter="demo1" onclick="location.href='book?method=input'">添加图书</button>
 
 <table border="1" style="width: 100% ;height: 100%;text-align: center;">
     <tr>
@@ -72,7 +64,7 @@
         <th width="200">出版社</th>
         <th width="100">出版日期</th>
         <th width="550">简介</th>
-        <th>操作</th>
+        <th width="200">操作</th>
     </tr>
 
     <%--@elvariable id="bookList" type="java.util.List"--%>
@@ -89,11 +81,38 @@
             <td>${book.b_pubDate}</td>
             <td>${book.b_comment}</td>
             <td>
-                <a href="book?method=input&b_id=${book.b_id}">修改</a>
-                <a href="book?method=delete&b_id=${book.b_id}">删除</a>
+                    <%--<a href="book?method=input&b_id=${book.b_id}">修改</a>--%>
+                    <%--<a href="book?method=delete&b_id=${book.b_id}">删除</a>--%>
+                        <button class="layui-btn" lay-filter="demo1"
+                                onclick="location.href='book?method=input&b_id=${book.b_id}'">修改
+                        </button>
+                        <button class="layui-btn" lay-filter="demo1"
+                                onclick="location.href='book?method=delete&b_id=${book.b_id}'">删除
+                        </button>
+                <%--<div class="layui-btn-group">
+                    <button type="button" onclick="location.href='book?method=input&b_id=${book.b_id}'" class="layui-btn">编辑</button>
+                    <button type="button" onclick="location.href='book?method=delete&b_id=${book.b_id}'" class="layui-btn">删除</button>
+                </div>--%>
             </td>
         </tr>
     </c:forEach>
 </table>
+<script>
+    $(function () {
+        $("#query").click(function () {
+            var inputList = document.getElementsByClassName("isEmpty");
+            var str = "";
+            for (var i = 0; i < 4; i++) {
+                console.log(inputList[i].value);
+                str += inputList[i].value;
+            }
+            console.log(str);
+            if (str === null || str.length === 0) {
+                alert("查询条件不能为空!");
+                return false;
+            }
+        })
+    });
+</script>
 </body>
 </html>
