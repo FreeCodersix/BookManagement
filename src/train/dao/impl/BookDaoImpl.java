@@ -100,15 +100,7 @@ public class BookDaoImpl implements BookDao {
         String b_publisher = book.getB_publisher();
 
         if(book.getB_id()==null || book.getB_id().length()==0){
-            if(b_name != null && book.getB_name().length()!=0){
-                sql = sql+"SELECT * FROM 图书表 WHERE b_name like '%"+b_name+"%'";
-            }else if(b_class != null && book.getB_class().length()!=0){
-                sql = sql+"SELECT * FROM 图书表 WHERE b_class like '%"+b_class+"%'";
-            }else if(b_author != null && book.getB_author().length()!=0){
-                sql = sql+"SELECT * FROM 图书表 WHERE b_author like '%"+b_author+"%'";
-            }else if(b_publisher != null && book.getB_publisher().length()!=0){
-                sql = sql+"SELECT * FROM 图书表 WHERE b_publisher like '%"+b_publisher+"%'";
-            }
+            sql = sql+"SELECT * FROM 图书表 WHERE b_name like '%"+b_name+"%' and b_class LIKE '%"+b_class+"%' and b_author LIKE '%"+b_author+"%' and b_publisher LIKE '%"+b_publisher+"%'";
         }
         else {
             sql = "select * from 图书表";

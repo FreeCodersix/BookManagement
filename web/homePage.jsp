@@ -1,4 +1,4 @@
-<%--
+<%@ page import="com.mysql.fabric.xmlrpc.base.Data" %><%--
   Created by IntelliJ IDEA.
   User: Administrator
   Date: 2019/7/9
@@ -77,16 +77,16 @@
                 <li class="layui-nav-item layui-nav-itemed">
                     <a class="javascript:;" href="javascript:;">书籍查询</a>
                     <dl class="layui-nav-child">
-                        <dd class="layui-this">
+                        <dd class="nav layui-this" id="nav1">
                             <a href="/demo/">书名搜索</a>
                         </dd>
-                        <dd>
+                        <dd class="nav" id="nav2">
                             <a href="/demo/">类别搜索</a>
                         </dd>
-                        <dd>
+                        <dd class="nav" id="nav3">
                             <a href="/demo/">作者搜索</a>
                         </dd>
-                        <dd>
+                        <dd class="nav" id="nav4">
                             <a href="/demo/">出版社搜索</a>
                         </dd>
                     </dl>
@@ -95,14 +95,14 @@
                 <li class="layui-nav-item layui-nav-itemed">
                     <a class="javascript:;" href="javascript:;">书籍借阅</a>
                     <dl class="layui-nav-child">
-                        <dd class="">
-                            <a href="homePage.jsp?src=apply.html" class="apply">申请借阅</a>
+                        <dd class="nav" id="nav5">
+                            <a href="homePage.jsp?src=apply.jsp" class="apply" id="apply1">申请借阅</a>
                         </dd>
-                        <dd class="">
-                            <a href="homePage.jsp?src=apply.html" class="apply">申请归还</a>
+                        <dd class="nav" id="nav6">
+                            <a href="homePage.jsp?src=apply.jsp" class="apply" id="apply2">申请归还</a>
                         </dd>
-                        <dd class="">
-                            <a href="homePage.jsp?src=apply.html" class="apply">申请预定</a>
+                        <dd class="nav" id="nav7">
+                            <a href="homePage.jsp?src=apply.jsp" class="apply" id="apply3">申请预定</a>
                         </dd>
                     </dl>
                 </li>
@@ -110,14 +110,14 @@
                 <li class="layui-nav-item layui-nav-itemed">
                     <a class="javascript:;" href="javascript:;">问题咨询</a>
                     <dl class="layui-nav-child">
-                        <dd class="">
-                            <a href="homePage.jsp?src=advice.html" class="advice">问题</a>
+                        <dd class="nav" id="nav8">
+                            <a href="homePage.jsp?src=advice.html" class="advice" id="advice1">问题</a>
                         </dd>
-                        <dd class="">
-                            <a href="homePage.jsp?src=advice.html" class="advice">投诉</a>
+                        <dd class="nav" id="nav9">
+                            <a href="homePage.jsp?src=advice.html" class="advice" id="advice2">投诉</a>
                         </dd>
-                        <dd>
-                            <a href="homePage.jsp?src=advice.html" class="advice">意见和建议</a>
+                        <dd class="nav" id="nav10">
+                            <a href="homePage.jsp?src=advice.html" class="advice" id="advice3">意见和建议</a>
                         </dd>
                     </dl>
                 </li>
@@ -133,6 +133,11 @@
 </div>
 <div id="LAY_democodejs">
     <script>
+        var id;
+        var idList = [];
+        idList[0] = idList[1] = "nav1";
+        var i = 2;
+
         layui.use('element', function () {
             var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
 
@@ -144,20 +149,34 @@
         });
 
         $(".advice").click(function () {
-            $("#iframe").attr("src", "advice.html");
+            var nav_id = $(this).attr("id");
+            $("#iframe").attr("src", "advice.jsp?nav_id=" + nav_id);
         });
+
         $(".apply").click(function () {
-            $("#iframe").attr("src", "apply.html");
+            var apply_id = $(this).attr("id");
+            $("#iframe").attr("src", "apply.jsp?apply_id="+apply_id);
         });
         $("#p").click(function () {
-            history.go(-1);
-            goBack();
+            if (i > 2) {
+                history.go(-1);
+                i--;
+                idList[i] = "";
+            }
+            $(".nav").removeClass("layui-this");
+            var idnav = document.getElementById(idList[i - 1]);
+            idnav.className = "nav layui-this";
+            return false;
         });
 
-        function goBack() {
-            history.go(-1);
-        }
-
+        $(".nav").click(function () {
+            $(".nav").removeClass("layui-this");
+            $(this).addClass("layui-this");
+            id = $(this).attr("id");
+            idList[i] = id;
+            i++;
+            return false;
+        });
     </script>
 </div>
 </body>
