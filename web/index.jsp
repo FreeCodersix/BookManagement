@@ -61,7 +61,7 @@
             {
                 "username": $username,
                 "password": $password,
-                "repassword":""
+                "repassword": ""
             },
 
             function (result) {
@@ -94,27 +94,10 @@
 
                 }
             }
-        )}
-<%session.setAttribute("username",null);%>
-
-    //添加cookie
-    function setCookie(name,value,time){
-        var date= new Date();
-        date.setDate(date.getDate()+time);
-        document.cookie = name+"="+value+";expires="+date;
+        )
     }
 
-    //获得cookie
-    function getCookie(name){
-        var arr = document.cookie.split(";");
-        for(var i=0; i<arr.length; i++){
-            var arr2 = arr[i].split("=");
-            if(arr2[0] == name){
-                return arr2[1];
-            }
-        }
-        return null;
-    }
+    <%session.setAttribute("username",null);%>
 
 </script>
 
