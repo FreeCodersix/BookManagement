@@ -138,10 +138,6 @@
         idList[0] = idList[1] = "nav1";
         var i = 2;
 
-        var urlList = [];
-        urlList[0] = "homePage.jsp?src=book?method=list";
-        var j = 1;
-
         layui.use('element', function () {
             var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
 

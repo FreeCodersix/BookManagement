@@ -84,7 +84,7 @@
     <div class="layui-form-item layui-form-text">
         <label class="layui-form-label">简介</label>
         <div class="layui-input-block">
-            <textarea placeholder="请输入内容" class="layui-textarea" name="b_comment" value="${book.b_comment}"></textarea>
+            <textarea placeholder="请输入内容" class="layui-textarea" name="b_comment" id="textarea"></textarea>
         </div>
     </div>
 
@@ -95,6 +95,9 @@
         </div>
     </div>
     <script>
+        window.onload = function (ev) {
+            $("#textarea").text("${book.b_comment}");
+        };
         layui.use(['form', 'layedit', 'laydate'], function () {
             var form = layui.form
                 , layer = layui.layer

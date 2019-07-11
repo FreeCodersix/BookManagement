@@ -84,7 +84,7 @@
     <div class="layui-form-item layui-form-text">
         <label class="layui-form-label">简介</label>
         <div class="layui-input-block">
-            <textarea placeholder="请输入内容" class="layui-textarea" name="b_comment" value="${book.b_comment}"></textarea>
+            <textarea placeholder="请输入内容" class="layui-textarea" name="b_comment" id="textarea"></textarea>
         </div>
     </div>
 
@@ -92,14 +92,12 @@
         <div class="layui-input-block">
             <button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
             <button type="reset" class="layui-btn layui-btn-primary">重置</button>
-            <%--<button class="layui-btn layui-btn-primary layui-btn-normal" onclick="location.href='list.jsp?src=method'">返回</button>--%>
-            <button class="layui-btn layui-btn-primary layui-btn-normal" onclick="goBack()">返回</button>
         </div>
     </div>
     <script>
-        function goBack(){
-            location.href='homePage.jsp?src=book?method=list';
-        }
+        window.onload = function (ev) {
+            $("#textarea").text("${book.b_comment}");
+        };
         layui.use(['form', 'layedit', 'laydate'], function () {
             var form = layui.form
                 , layer = layui.layer
