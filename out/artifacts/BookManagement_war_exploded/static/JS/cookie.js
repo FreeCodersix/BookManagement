@@ -38,18 +38,22 @@ function addCookie(key, value, day, path, domain) {
 
 function getCookie(key) {
     var res = document.cookie.split(";");
-    for (var i = 0; i < res.length; i++) {
-        var temp = res[i].split("=");
-        if (temp[0].trim() === key) {
-            return temp[1];
+    if (key) {
+        for (var i = 0; i < res.length; i++) {
+            var temp = res[i].split("=");
+            if (temp[0].trim() === key) {
+                return temp[1];
+            }
         }
+    }else{
+        return res[res.length-1].split("=")[0].trim();
     }
 }
 
 // console.log(getCookie("949578388"));
 
 function delCookie(key) {
-    addCookie(key, getCookie(key), -2,"/");
+    addCookie(key, getCookie(key), -1);
 }
 
 // delCookie("gender");

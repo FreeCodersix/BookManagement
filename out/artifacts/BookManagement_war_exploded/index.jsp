@@ -22,12 +22,14 @@
         <div id="top">
             <div id="username">
                 <span class="span">用户名：</span>
-                <input type="text" name="username" placeholder="请输入用户名" class="layui-input" id="username_input">
+                <input type="text" name="username" placeholder="请输入用户名" class="layui-input" id="username_input"
+                       value="">
             </div>
             <div id="password">
-                <span class="span">密&nbsp;&nbsp;&nbsp;码：</span>
+                <span class="span">密&nbsp;&nbsp;&nbsp;&nbsp;码：</span>
                 <input type="password" name="password" placeholder="请输入密码" class="layui-input" id="password_input"
-                       value="">
+                       value="" style="width: 190px;">
+                <div style="width: 70px;height: 40px;line-height: 40px;text-align: center;display: inline-block"><input type="checkbox" style="width: 15px;height: 15px;cursor: pointer" id="remember" checked="checked" ><span style="font-size: 16px;font-weight:bolder;color:#ccc">记住我</span></div>
             </div>
 
             <div id="kaptcha">
@@ -37,8 +39,7 @@
             </div>
         </div>
         <div id="bottom">
-            <%--<a href="#" id="a_pwd">忘记密码</a>--%>
-            <input type="checkbox" style="width: 20px;height: 20px;"  id="remember">记住我
+            <a href="#" id="a_pwd">忘记密码</a>
             <span style="color: #cccccc">|</span><a href="register.html" id="a_rgt">注册</a>
             <input type="button" value="Login" id="login_btn" onclick="kaptch_check()">
         </div>
@@ -52,6 +53,10 @@
         });
         var kaptcha_input = document.getElementById("kaptcha_input");
         kaptcha_input.value = "";
+        var u_input = document.getElementById("username_input");
+        u_input.value = getCookie();
+        var p_input = document.getElementById("password_input");
+        p_input.value = getCookie(u_input.value);
     });
 
     function login() {
@@ -68,15 +73,15 @@
 
             function (result) {
                 if (result.msg === "true") {
-                    alert($("input[type='checkbox']").is(':checked'));
+                    // alert($("input[type='checkbox']").is(':checked'));
                     // 判断选择框是否被选中
                     // $("input[type='checkbox']").is(':checked')
                     if ($("input[type='checkbox']").is(':checked')) {
                         var username_input_val = $("#username_input").val();
                         var password_input_val = $("#password_input").val();
                         addCookie(username_input_val, password_input_val, 1);
-                        console.log(document.cookie);
-                    }else{
+                        // console.log(document.cookie);
+                    } else {
                         var username_input_val1 = $("#username_input").val();
                         delCookie(username_input_val1);
                     }
