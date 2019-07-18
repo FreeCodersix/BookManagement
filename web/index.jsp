@@ -12,9 +12,9 @@
     <link rel="stylesheet" href="static/CSS/login.css">
     <script src="static/JS/jquery.min.js"></script>
     <script src="static/JS/jquery-1.12.4.js"></script>
+    <script src="static/JS/cookie.js"></script>
     <base target="_self">
 </head>
-<body>
 <body>
 <div id="div0">
     <div id="div1">
@@ -26,7 +26,8 @@
             </div>
             <div id="password">
                 <span class="span">密&nbsp;&nbsp;&nbsp;码：</span>
-                <input type="password" name="password" placeholder="请输入密码" class="layui-input" id="password_input">
+                <input type="password" name="password" placeholder="请输入密码" class="layui-input" id="password_input"
+                       value="">
             </div>
 
             <div id="kaptcha">
@@ -36,9 +37,10 @@
             </div>
         </div>
         <div id="bottom">
-            <a href="#" id="a_pwd">忘记密码</a><span style="color: #cccccc">|</span><a href="register.html"
-                                                                                   id="a_rgt">注册</a>
-            <input type="button" value="Login" id="login_btn" onclick="login()">
+            <%--<a href="#" id="a_pwd">忘记密码</a>--%>
+            <input type="checkbox" style="width: 20px;height: 20px;"  id="remember">记住我
+            <span style="color: #cccccc">|</span><a href="register.html" id="a_rgt">注册</a>
+            <input type="button" value="Login" id="login_btn" onclick="kaptch_check()">
         </div>
         <%--</form>--%>
     </div>
@@ -66,6 +68,18 @@
 
             function (result) {
                 if (result.msg === "true") {
+                    // alert($("input[type='checkbox']").is(':checked'));
+                    // 判断选择框是否被选中
+                    // $("input[type='checkbox']").is(':checked')
+                    if ($("input[type='checkbox']").is(':checked')) {
+                        var username_input_val = $("#username_input").val();
+                        var password_input_val = $("#password_input").val();
+                        addCookie(username_input_val, password_input_val, 1);
+                        console.log(document.cookie);
+                    }else{
+                        var username_input_val1 = $("#username_input").val();
+                        delCookie(username_input_val1);
+                    }
                     location.href = "homePage.jsp?src=book?method=list";
                 } else {
                     alert("用户名或密码错误!");
@@ -74,17 +88,12 @@
         );
     }
 
-    $("#kaptcha_input").blur(function () {
-        kaptch_check();
-    });
-
     function kaptch_check() {
         var $code = $("#kaptcha_input").val();
         $.getJSON(
             "Servlet",
             {"code": $code},
             function (result) {
-
                 if (result.msg === "true") {
                     login();
                 } else {
@@ -99,9 +108,17 @@
 
     <%session.setAttribute("username",null);%>
 
+    $("#username_input").change(function () {
+        var username_input = $("#username_input").val();
+        // console.log(username_input);
+        if (getCookie(username_input) != null && getCookie(username_input).length > 0) {
+            var password_input = document.getElementById("password_input");
+            password_input.value = getCookie(username_input);
+            // $("#password_input").text(getCookie(username_input));
+            console.log(getCookie(username_input));
+        }
+    })
 </script>
 
-
-</body>
 </body>
 </html>

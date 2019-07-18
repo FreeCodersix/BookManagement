@@ -63,7 +63,7 @@
         <th width="160">作者</th>
         <th width="200">出版社</th>
         <th width="100">出版日期</th>
-        <th width="550">简介</th>
+        <%--<th width="550">简介</th>--%>
         <th width="200">操作</th>
     </tr>
 
@@ -79,7 +79,7 @@
             <td>${book.b_author}</td>
             <td>${book.b_publisher}</td>
             <td>${book.b_pubDate}</td>
-            <td>${book.b_comment}</td>
+            <%--<td>${book.b_comment}</td>--%>
             <td>
                     <%--<a href="book?method=input&b_id=${book.b_id}">修改</a>--%>
                     <%--<a href="book?method=delete&b_id=${book.b_id}">删除</a>--%>
