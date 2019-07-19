@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="static/CSS/login.css">
     <script src="static/JS/jquery.min.js"></script>
     <script src="static/JS/jquery-1.12.4.js"></script>
-    <script src="static/JS/cookie.js"></script>
+    <%--<script src="static/JS/cookie.js"></script>--%>
+    <script src="static/JS/jquery.cookie.js"></script>
     <base target="_self">
 </head>
 <body>
@@ -54,9 +55,9 @@
         var kaptcha_input = document.getElementById("kaptcha_input");
         kaptcha_input.value = "";
         var u_input = document.getElementById("username_input");
-        u_input.value = getCookie();
+        u_input.value = $.getCookie();
         var p_input = document.getElementById("password_input");
-        p_input.value = getCookie(u_input.value);
+        p_input.value = $.getCookie(u_input.value);
     });
 
     function login() {
@@ -79,11 +80,11 @@
                     if ($("input[type='checkbox']").is(':checked')) {
                         var username_input_val = $("#username_input").val();
                         var password_input_val = $("#password_input").val();
-                        addCookie(username_input_val, password_input_val, 1);
+                        $.addCookie(username_input_val, password_input_val, 1);
                         // console.log(document.cookie);
                     } else {
                         var username_input_val1 = $("#username_input").val();
-                        delCookie(username_input_val1);
+                        $.delCookie(username_input_val1);
                     }
                     location.href = "homePage.jsp?src=book?method=list";
                 } else {
@@ -116,11 +117,11 @@
     $("#username_input").change(function () {
         var username_input = $("#username_input").val();
         // console.log(username_input);
-        if (getCookie(username_input) != null && getCookie(username_input).length > 0) {
+        if ($.getCookie(username_input) != null && $.getCookie(username_input).length > 0) {
             var password_input = document.getElementById("password_input");
-            password_input.value = getCookie(username_input);
+            password_input.value = $.getCookie(username_input);
             // $("#password_input").text(getCookie(username_input));
-            console.log(getCookie(username_input));
+            console.log($.getCookie(username_input));
         }
     })
 </script>
