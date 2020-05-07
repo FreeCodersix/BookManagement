@@ -3,6 +3,7 @@ package train.service.impl;
 import train.dao.BookDao;
 import train.dao.impl.BookDaoImpl;
 import train.entity.Book;
+import train.entity.FeedBack;
 import train.service.BookService;
 
 import java.util.List;
@@ -29,6 +30,11 @@ public class BookServiceImpl implements BookService{
     @Override
     public Book getOne(String b_id) throws Exception {
         return bookDao.getOne(b_id);
+    }
+
+    @Override
+    public int insertFeed(FeedBack feedBack) throws Exception {
+        return bookDao.insertFeed(feedBack);
     }
 
     @Override

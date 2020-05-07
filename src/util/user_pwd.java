@@ -40,9 +40,10 @@ public class user_pwd extends HttpServlet {
         if (password != null && password.length() != 0) {
             if (repwd == null || repwd.length() == 0) {
                 try {
+                    String flag = checkUser.QueryFlag(request.getParameter("username"));
                     if (checkUser.check(request.getParameter("username"), request.getParameter("password"))) {
                         //客户端是getJSON，则要以json格式返回数据
-                        out.write("{\"msg\":\"true\"}");
+                        out.write("{\"msg\":\"true+"+flag+"\"}");
                         request.getSession().setAttribute("username", request.getParameter("username"));
                     } else {
                         out.write("{\"msg\":\"false\"}");

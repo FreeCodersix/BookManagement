@@ -1,4 +1,8 @@
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.LinkedList" %>
+<%@ page import="util.checkUser" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,153 +20,62 @@
 <div class="layui-main">
     <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
         <ul class="layui-tab-title">
-            <li class="apply_nav layui-this" id="apply1">申请借阅</li>
-            <li class="apply_nav" id="apply2">申请归还</li>
-            <li class="apply_nav" id="apply3">申请预定</li>
+            <li class="apply_nav layui-this" id="apply1">借阅记录</li>
+            <li class="apply_nav" id="apply2">归还记录</li>
+            <li class="apply_nav" id="apply3">归还申请</li>
         </ul>
         <div class="layui-tab-content" style="height: 100px;">
-            <div class="layui-tab-item layui-show">
+            <div class="layui-tab-item" id="div_apply1">
                 <!-- 内容1 -->
-                <form class="layui-form " action="" style="margin-top:30px;">
-                    <input type="hidden" name="state" value="借阅">
-
-                <div class="layui-form-item">
-
-                    <label class="layui-form-label">借阅</label>
-                    <div class="layui-input-block">
-                        <select name="conti" lay-filter="aihao" lay-verify="required">
-                            <option value=""></option>
-                            <option value="否" selected="">初借</option>
-                            <option value="是">续借</option>
-                        </select>
-                    </div>
-
-                </div>
-
-
-                    <div class="layui-form-item">
-                        <label class="layui-form-label">书名</label>
-                        <div class="layui-input-block">
-                            <input type="text" name="b_name" autocomplete="off" class="layui-input">
-                        </div>
-                    </div>
-
-                    <div class="layui-form-item">
-
-                        <label class="layui-form-label">借阅时间</label>
-                        <div class="layui-input-block">
-                            <select name="loanTime" lay-filter="aihao" lay-verify="required">
-                                <option value=""></option>
-                                <option value="7" selected="">一周</option>
-                                <option value="14">两周</option>
-                                <option value="21">三周</option>
-                                <option value="30">一个月</option>
-                                <option value="60">两个月</option>
-                                <option value="90">三个月</option>
-                            </select>
-                        </div>
-
-                    </div>
-
-
-                    <div class="layui-form-item layui-form-text">
-                        <label class="layui-form-label">备注</label>
-                        <div class="layui-input-block">
-                            <textarea placeholder="选填" class="layui-textarea" name="r_ps"></textarea>
-                        </div>
-                    </div>
-
-
-                    <div class="layui-form-item">
-                        <div class="layui-input-block">
-                            <button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
-                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
-                        </div>
-                    </div>
-                </form>
+                <table class="layui-table" id="demo_apply1" border="1" style="text-align: center;">
+                    <tr>
+                        <th style="text-align: center;" width="40">序号</th>
+                        <th style="text-align: center;" width="60">用户ID</th>
+                        <th style="text-align: center;" width="60">书ID</th>
+                        <th style="text-align: center;" width="140">书名</th>
+                        <th style="text-align: center;" width="140">借阅时间</th>
+                        <th style="text-align: center;" width="140">应归还时间</th>
+                        <th style="text-align: center;" width="140">借阅状态</th>
+                        <%--<th style="text-align: center;" width="200">操作</th>--%>
+                        <%--<th style="text-align: center;display: none;" width="200">id</th>--%>
+                    </tr>
+                </table>
 
             </div>
 
-            <div class="layui-tab-item">
+            <div class="layui-tab-item" id="div_apply2">
                 <!-- 内容2 -->
-                <form class="layui-form " action="" style="margin-top:30px;">
-                    <input type="hidden" name="state" value="归还">
-
-                    <div class="layui-form-item">
-
-                        <label class="layui-form-label">归还</label>
-                        <div class="layui-input-block">
-                            <input type="text" class="layui-input" value="还书" disabled="disabled">
-                        </div>
-
-                    </div>
-
-
-                    <div class="layui-form-item">
-                        <label class="layui-form-label">书名</label>
-                        <div class="layui-input-block">
-                            <input type="text" name="b_name" autocomplete="off" class="layui-input">
-                        </div>
-                    </div>
-
-
-
-                    <div class="layui-form-item layui-form-text">
-                        <label class="layui-form-label">备注</label>
-                        <div class="layui-input-block">
-                            <textarea placeholder="选填" class="layui-textarea" name="r_ps"></textarea>
-                        </div>
-                    </div>
-
-
-                    <div class="layui-form-item">
-                        <div class="layui-input-block">
-                            <button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
-                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
-                        </div>
-                    </div>
-                </form>
+                <table class="layui-table" id="demo_apply2" border="1" style="text-align: center;">
+                    <tr>
+                        <th style="text-align: center;" width="40">序号</th>
+                        <th style="text-align: center;" width="60">用户ID</th>
+                        <th style="text-align: center;" width="60">书ID</th>
+                        <th style="text-align: center;" width="140">书名</th>
+                        <th style="text-align: center;" width="140">借阅时间</th>
+                        <th style="text-align: center;" width="140">应归还时间</th>
+                        <th style="text-align: center;" width="140">借阅状态</th>
+                        <%--<th style="text-align: center;" width="200">操作</th>--%>
+                        <%--<th style="text-align: center;display: none;" width="200">id</th>--%>
+                    </tr>
+                </table>
 
             </div>
-            <div class="layui-tab-item">
+
+            <div class="layui-tab-item" id="div_apply3">
                 <!-- 内容3 -->
-                <form class="layui-form " action="" style="margin-top:30px;">
-                    <input type="hidden" name="state" value="预定">
-
-                    <div class="layui-form-item">
-
-                        <label class="layui-form-label">预定</label>
-                        <div class="layui-input-block">
-                            <input class="layui-input" type="text" value="预定" disabled="disabled">
-                        </div>
-
-                    </div>
-
-
-                    <div class="layui-form-item">
-                        <label class="layui-form-label">书名</label>
-                        <div class="layui-input-block">
-                            <input type="text" name="b_name" autocomplete="off" class="layui-input">
-                        </div>
-                    </div>
-
-
-                    <div class="layui-form-item layui-form-text">
-                        <label class="layui-form-label">备注</label>
-                        <div class="layui-input-block">
-                            <textarea placeholder="选填" class="layui-textarea" name="r_ps"></textarea>
-                        </div>
-                    </div>
-
-
-                    <div class="layui-form-item">
-                        <div class="layui-input-block">
-                            <button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
-                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
-                        </div>
-                    </div>
-                </form>
-
+                <table class="layui-table" id="demo_apply3" border="1" style="text-align: center;">
+                    <tr>
+                        <th style="text-align: center;" width="40">序号</th>
+                        <th style="text-align: center;" width="60">用户ID</th>
+                        <th style="text-align: center;" width="60">书ID</th>
+                        <th style="text-align: center;" width="140">书名</th>
+                        <th style="text-align: center;" width="140">借阅时间</th>
+                        <th style="text-align: center;" width="140">应归还时间</th>
+                        <th style="text-align: center;" width="140">借阅状态</th>
+                        <th style="text-align: center;" width="200">操作</th>
+                        <th style="text-align: center;display: none;" width="200">id</th>
+                    </tr>
+                </table>
             </div>
         </div>
     </div>
@@ -172,150 +85,112 @@
 <script>
     window.onload = function (ev) {
         $(".apply_nav").removeClass("layui-this");
-        var idn = document.getElementById("<%=request.getParameter("apply_id")%>");
+        $(".layui-tab-item").removeClass("layui-show");
+        var idn = document.getElementById('<%=request.getParameter("apply_id")%>');
+        var div = document.getElementById("div_"+'<%=request.getParameter("apply_id")%>');
         idn.className="apply_nav layui-this";
+        div.className="layui-tab-item layui-show";
+        apply()
         return false;
     };
 
     $(function () {
-        $("#kaptcha_img").click(function () {
-            $(this).hide().attr('src', this.src + '?' + new Date().getTime()).fadeIn();
-        });
+        // $("button").click(function (ev) {//获取点击id
+        $(document).on('click', 'button', function (ev) {
+            ev.preventDefault();
+            var sure = false;
+            var sid = $(this).attr("id");
+            if (sid !== "change" && sid !== "btn_hidden") {
+                var id = sid.split("+")[0];
+                var btn = document.getElementById(id);
+                var state = sid.split("+")[1];
+                if (state === "待审核")
+                    layui.use('layer', function () {
+                        var layer = layui.layer;
 
+                        layer.open(
+                            {
+                                title: '',
+                                content: '是否同意此还书申请？',
+                                closeBtn: true,
+                                shade: 0.3,
+                                move: false,
+                                yes: function (index) {
+                                    sub(id);
+                                    layer.close(index);
+                                    setTimeout(function () {
+                                        alert("确认还书成功！");
+                                        window.location.href = window.location.href
+                                    },100)
 
-    });
-    layui.use(['form', 'layedit', 'laydate'], function(){
-        var form = layui.form
-            ,layer = layui.layer
-            ,layedit = layui.layedit
-            ,laydate = layui.laydate;
-
-
-        //创建一个编辑器
-        var editIndex = layedit.build('LAY_demo_editor');
-
-        //自定义验证规则
-        form.verify({
-            title: function(value){
-                if(value.length < 5){
-                    return '标题至少得5个字符啊';
+                                }
+                            }
+                        );
+                    });
+                else {
+                    alert("您已同意此申请，请勿重复审批!");
                 }
             }
-            ,pass: [
-                /^[\S]{6,12}$/
-                ,'密码必须6到12位，且不能出现空格'
-            ]
-            ,content: function(value){
-                layedit.sync(editIndex);
-            }
         });
-
-
 
     });
-    layui.use('element', function(){
-        var $ = layui.jquery
-            ,element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
 
-        //触发事件
-        var active = {
-            tabAdd: function(){
-                //新增一个Tab项
-                element.tabAdd('demo', {
-                    title: '新选项'+ (Math.random()*1000|0) //用于演示
-                    ,content: '内容'+ (Math.random()*1000|0)
-                    ,id: new Date().getTime() //实际使用一般是规定好的id，这里以时间戳模拟下
-                })
+    function sub(id) {
+        $.getJSON(
+            "book?method=returnBooks",
+            {
+                "rbid": id,
+                "state": "归还",
             }
-            ,tabDelete: function(othis){
-                //删除指定Tab项
-                element.tabDelete('demo', '44'); //删除：“商品管理”
+        );
+    }
 
+    function apply() {
+        <%
+        session.setAttribute("status",request.getParameter("status"));
+        %>
+        <%
+        List<String> list = new LinkedList<>();
+        try {
+        list = checkUser.queryBorrow_admin(list,session.getAttribute("status").toString());
+        }catch (Exception e) {
+        e.printStackTrace();
+        }
+        int k = 0;
+        for(String string : list) {
+            String data[] = string.split(",");
+            %>
 
-                othis.addClass('layui-btn-disabled');
+        var tr = document.createElement('tr');
+        tr.class = '.last_tr';
+        var tdd = document.createElement('td');
+        tdd.innerText = <%=k%>;
+        tr.appendChild(tdd);
+        <%
+            String bid=null;
+            for (int i = 0; i < 6; i++) {
+                %>
+        var td = document.createElement('td');
+        td.innerText = '<%=data[i]%>';
+        tr.append(td);
+        <%
+                bid = data[1] + ":" + data[6] + "+" + data[5];
             }
-            ,tabChange: function(){
-                //切换到指定Tab项
-                element.tabChange('demo', '22'); //切换到：用户管理
-            }
-        };
+            %>
+        if('待审核' === '<%=session.getAttribute("status").toString()%>') {
+            var ttdd = document.createElement('td');
+            ttdd.innerHTML = "<button class=\"layui-btn\" id=\"<%=bid%>\">同意</button>";
+            tr.append(ttdd);
+        }
+        $(tr).addClass("addtr");
+        console.log("steven_apply")
+        $("#demo_"+'<%=request.getParameter("apply_id")%>').append(tr);
+        <%
+          k++;
+        }
+        %>
 
-        $('.site-demo-active').on('click', function(){
-            var othis = $(this), type = othis.data('type');
-            active[type] ? active[type].call(this, othis) : '';
-        });
-
-        //Hash地址的定位
-//        var layid = location.hash.replace(/^#test=/, '');
-//        element.tabChange('test', layid);
-//
-//        element.on('tab(test)', function(elem){
-//            location.hash = 'test='+ $(this).attr('lay-id');
-//        });
-
-    });
-    layui.use(['form', 'layedit', 'laydate'], function(){
-        var form = layui.form
-            ,layer = layui.layer
-            ,layedit = layui.layedit
-            ,laydate = layui.laydate;
-
-        //日期
-        laydate.render({
-            elem: '#date'
-        });
-        laydate.render({
-            elem: '#date1'
-        });
-
-        //创建一个编辑器
-        var editIndex = layedit.build('LAY_demo_editor');
-
-        //自定义验证规则
-        form.verify({
-            title: function(value){
-                if(value.length < 5){
-                    return '标题至少得5个字符啊';
-                }
-            }
-            ,pass: [
-                /^[\S]{6,12}$/
-                ,'密码必须6到12位，且不能出现空格'
-            ]
-            ,content: function(value){
-                layedit.sync(editIndex);
-            }
-        });
-
-        //监听指定开关
-        form.on('switch(switchTest)', function(data){
-            layer.msg('开关checked：'+ (this.checked ? 'true' : 'false'), {
-                offset: '6px'
-            });
-            layer.tips('温馨提示：请注意开关状态的文字可以随意定义，而不仅仅是ON|OFF', data.othis)
-        });
-
-        //监听提交
-        form.on('submit(demo1)', function(data){
-            layer.alert(JSON.stringify(data.field), {
-                title: '最终的提交信息'
-            })
-            return false;
-        });
-
-        //表单初始赋值
-        form.val('example', {
-            "username": "贤心" // "name": "value"
-            ,"password": "123456"
-            ,"interest": 1
-            ,"like[write]": true //复选框选中状态
-            ,"close": true //开关状态
-            ,"sex": "女"
-            ,"desc": "我爱 layui"
-        })
-
-
-    });
+    }
 </script>
 </body>
 </html>

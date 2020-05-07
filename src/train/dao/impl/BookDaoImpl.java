@@ -4,6 +4,7 @@ import com.sun.org.apache.bcel.internal.generic.Select;
 import train.DbUtil;
 import train.dao.BookDao;
 import train.entity.Book;
+import train.entity.FeedBack;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -116,6 +117,20 @@ public class BookDaoImpl implements BookDao {
         }
         DbUtil.close(rs, st, null, con);
         return list;
+    }
+
+    @Override
+    public int insertFeed(FeedBack feedBack) throws Exception {
+        con = DbUtil.getConnection();
+        st = con.createStatement();
+        String sql = "INSERT INTO 用户反馈表(u_id,type,content) VALUES (?,?,?)";
+        PreparedStatement ps = con.prepareStatement(sql);
+        ps.setInt(1,feedBack.getuId());
+        ps.setString(2,feedBack.getType());
+        ps.setString(3,feedBack.getContent());
+        int result = ps.executeUpdate();
+        DbUtil.close(null,st,ps,con);
+        return result;
     }
 
     private Book getBookByResultSet(ResultSet rs) throws Exception {

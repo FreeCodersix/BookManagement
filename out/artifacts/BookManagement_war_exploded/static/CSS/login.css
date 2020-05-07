@@ -19,8 +19,8 @@ html, body {
     height: 250px;
     /*background-color: yellow;*/
     position: absolute;
-    left: 57%;
-    top: 25%;
+    left: 58%;
+    top: 18%;
 }
 
 .span {
@@ -72,7 +72,7 @@ input {
 }
 
 #bottom {
-    width: 432px;
+    width: 450px;
     height: 75px;
     /*background-color: blue;*/
     /*display: none;*/
@@ -80,17 +80,18 @@ input {
     position: relative;
 }
 
-#login_btn {
+#login_btn{
     width: 100px;
     background-color: rgb(3, 140, 178);
     font-weight: bolder;
     color: white;
     position: absolute;
-    right: 30px;
+    right: 46px;
     top: 25%;
     cursor: pointer;
     text-align: center;
     border:none;
+    font-size: 12px;
 }
 
 a {

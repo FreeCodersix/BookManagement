@@ -29,12 +29,12 @@
             <div class="layui-form component" lay-filter="LAY-site-header-component"></div>
             <ul class="layui-nav" style="float: right;">
                 <li class="layui-nav-item ">
-                    <a href="index.jsp">返回登陆<!-- <span class="layui-badge-dot"></span> --></a>
+                    <a href="index.jsp">返回登录<!-- <span class="layui-badge-dot"></span> --></a>
                 </li>
 
-                <li class="layui-nav-item">
-                    <a href="homePage.jsp?src=book?method=list" target="_blank">前往主页</a>
-                </li>
+                <!--<li class="layui-nav-item">-->
+                    <!--<a href="homePage.jsp?src=book?method=list" target="_blank">前往主页</a>-->
+                <!--</li>-->
 
             </ul>
         </div>
@@ -51,19 +51,22 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">用户名</label>
                 <div class="layui-input-block">
-                    <input type="text" name="username" lay-verify="required" lay-reqtext="用户名不能为空" placeholder="请输入用户名" autocomplete="off" class="layui-input" id="username_input">
+                    <input type="text" name="username" lay-verify="required" lay-reqtext="用户名不能为空" placeholder="请输入用户名"
+                           autocomplete="off" class="layui-input" id="username_input">
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">密码</label>
                 <div class="layui-input-block">
-                    <input type="password" name="password" lay-verify="required" lay-reqtext="密码不能为空" placeholder="请输入密码" autocomplete="off" class="layui-input" id="password_input">
+                    <input type="password" name="password" lay-verify="required" lay-reqtext="密码不能为空" placeholder="请输入密码"
+                           autocomplete="off" class="layui-input" id="password_input">
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">确认密码</label>
                 <div class="layui-input-block">
-                    <input type="password" name="password1" lay-verify="required" lay-reqtext="密码不能为空" placeholder="请输入密码" autocomplete="off" class="layui-input" id="repwd_input">
+                    <input type="password" name="password1" lay-verify="required" lay-reqtext="密码不能为空" placeholder="请输入密码"
+                           autocomplete="off" class="layui-input" id="repwd_input">
                 </div>
             </div>
 
@@ -109,9 +112,9 @@
 
             <div class="layui-form-item">
                 <div class="layui-inline">
-                    <label class="layui-form-label">验证手机</label>
+                    <label class="layui-form-label">手机号</label>
                     <div class="layui-input-inline">
-                        <input type="tel" name="phone" lay-verify="phone" lay-reqtext="请输入正确的手机格式" autocomplete="off" class="layui-input">
+                        <input type="tel" id="phone" name="phone" lay-verify="phone" lay-reqtext="请输入正确的手机格式" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>
@@ -125,7 +128,7 @@
 
             <div class="layui-form-item">
                 <div class="layui-input-block">
-                    <button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
+                    <button class="layui-btn" lay-submit="" lay-filter="demo1" id="submit">立即提交</button>
                     <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                 </div>
             </div>
@@ -141,6 +144,9 @@
         $("#kaptcha_img").click(function () {
             $(this).hide().attr('src', this.src + '?' + new Date().getTime()).fadeIn();
         });
+        $("#submit").click(function () {
+            checkPhone()
+        })
     });
 
     $("#repwd_input").blur(function () {
@@ -195,7 +201,13 @@
                 }
             }
         )}
-
+    function checkPhone(){
+        var phone = document.getElementById('phone').value;
+        if(!(/^1[3456789]\d{9}$/.test(phone))){
+            alert("手机号码有误，请重填");
+            return false;
+        }
+    }
     layui.use(['form', 'layedit', 'laydate'], function(){
         var form = layui.form
             ,layer = layui.layer

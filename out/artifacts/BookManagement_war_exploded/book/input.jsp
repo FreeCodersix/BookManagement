@@ -19,7 +19,7 @@
     <legend>添加与修改</legend>
 </fieldset>
 
-<form class="layui-form " action="book?method=save" method="post" style="margin-top:30px;">
+<form class="layui-form " action="book?method=save&identify=admin" method="post" style="margin-top:30px;">
     <input type="hidden" name="b_id" value="${book.b_id}"/><%--param.id也可以--%>
 
     <%--书名：<input type="text" name="b_name" value="${book.b_name}" size="30">--%>
@@ -94,6 +94,7 @@
             <button type="reset" class="layui-btn layui-btn-primary">重置</button>
         </div>
     </div>
+</form>
     <script>
         window.onload = function (ev) {
             $("#textarea").text("${book.b_comment}");
